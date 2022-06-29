@@ -1,4 +1,4 @@
-.service__container {
+.services__container {
   display: grid;
   grid-tepmlate-columns: repeat(3, 1fr);
   gap: 3rem;
