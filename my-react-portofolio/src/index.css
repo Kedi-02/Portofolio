@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+/* //Default styles for my different elements */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+/* //Css variables which helps me prevent repeating myself
+//Root means i can use them anywhere in this project.
+//To declare css variables i need to use '--', then the name of the variables
+//These bellow are the colors im gonna use */
+:root {
+  --color-bg: #1f1f38;
+  /* //This is gonna be the background color */
+  --color-bg-variant: #2c2c6c;
+  --color-primary: #4db5ff;
+  --color-primary-variant: rgba(77, 181, 255, 0.4);
+  --color-white: #fff;
+  --color-light: rgba(255, 255, 255, 0.6);
+
+  --transition: all 400ms ease;
+
+  /* //This is gonna be the width of the container class
+  //Wrap it around different elements 
+  its gonna be almost all the sections or components
+  */
+  --container-width-1g: 75%;
+  --container-width-md: 86%;
+  --container-width-sm: 90%;
+}
+
+html {
+  scroll-behaviour: smooth;
+}
+
+::-webkit-scrollbar {
+  /* removing the scrollbar */
+  display: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  /* this is how you use css variables on the different properties of your elements*/
+  background: var(--color-bg);
+  /* text color for every text is gonna be color white. */
+  color: var(--color-white);
+  line-height: 1.7;
+  background-image: url(../src/assets/bg-texture.png);
+}
+
+/* general styles */
+.container {
+  width: var(--container-width-1g);
+  /* To position it in the middle horizontally */
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weigth: 500;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+section {
+  /* so we have whit space around the different sections and components */
+  margin-top: 8rem;
+}
+
+/* every section is gonna have an h2, her is gonna be a direct child of the section tag. So we gonna have an h2 and a h5 */
+section > h2,
+section > h5 {
+  text-align: center;
+  color: var(--color-light);
+}
+
+/* i am getting the h2 and change that color to the color primary */
+section > h2 {
+  color: var(--color-primary);
+  margin-bottom: 3rem;
+}
+
+/* for some elements im gonna add this class and its gonna change the color to color light */
+.text-light {
+  color: var(--color-light);
+}
+
+a {
+  color: var(--color-primary);
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--color-white);
+}
+
+.btn {
+  /* Its gonna fit exactly its contents with this */
+  width: max-content;
+  display: block;
+  color: var(--color-primary);
+  /* 0.75rem for top and bottom. 1.2rem for left and right */
+  padding: 0.75rem 1.2rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  border: 1px solid var(--color-primary);
+  transition: var(--transition);
+}
+
+.btn:hover {
+  background: var(--color-white);
+  color: var(--color-bg);
+  border-color: transparent;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: var(--color-bg);
+}
+
+img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* 1st media q for yables (medium devices) */
+@media screen and (max-width: 1024px) {
+  /* container class has now a width of 86% */
+  .container {
+    width: var(--container-width-md);
+  }
+
+  section {
+    margin-top: 6rem;
+  }
+}
+
+/* 2nd media q for mobile (small devices) */
+@media screen and (max-width: 600px) {
+  .container {
+    width: var(--container-width-sm);
+  }
+
+  /* Here im getting the h2 */
+  section > h2 {
+    margin-bottom: 2rem;
+  }
+}
